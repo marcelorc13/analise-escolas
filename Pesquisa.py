@@ -1,7 +1,7 @@
-from data_loader import DataLoader
+from CarregadorDeArquivos import CarregadorDeArquivos
 import pandas as pd
 
-class Search(DataLoader):
+class Search(CarregadorDeArquivos):
     
     codigo = None
     searchData = None
@@ -11,9 +11,9 @@ class Search(DataLoader):
         
         
     def procurarCidade(self, input):
-        load = DataLoader(self.filePath)
-        load.loadData()
-        load.cleanData()
+        load = CarregadorDeArquivos(self.filePath)
+        load.carregarDados()
+        load.limparDados()
         
         data = load.data
         

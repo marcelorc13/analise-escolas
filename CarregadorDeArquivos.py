@@ -1,19 +1,19 @@
 import pandas as pd
 import re
 
-class DataLoader:
+class CarregadorDeArquivos:
     filePath = None
     data = None
     
     def __init__(self, filePath):
         self.filePath = filePath
     
-    def loadData(self):
+    def carregarDados(self):
         self.data = pd.read_excel(self.filePath)
         
         return self.data
         
-    def cleanData(self):
+    def limparDados(self):
         data = self.data
         data['Rede e Ano'] = data['Variável'].str.replace('Taxa de Aprovação no Ensino Médio - ', '', regex=False)
         

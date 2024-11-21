@@ -1,7 +1,7 @@
-from data_loader import DataLoader
-from search import Search
+from CarregadorDeArquivos import CarregadorDeArquivos
+from Pesquisa import Search
 
-# data = DataLoader('taxa-aprovacao.xls')
+# data = CarregadorDeArquivos('taxa-aprovacao.xls')
 # s = data.loadData()
 # print(s)
 
