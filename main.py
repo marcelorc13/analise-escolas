@@ -1,14 +1,19 @@
 from CarregadorDeArquivos import CarregadorDeArquivos
-from Pesquisa import Search
+from Pesquisa import Pesquisa
+from Vizualizacao import Vizualizacao
 
-# data = CarregadorDeArquivos('taxa-aprovacao.xls')
-# s = data.loadData()
-# print(s)
+class Main:
+    def executarBusca(self):
+        pesquisa = Pesquisa('taxa-aprovacao.xls')
+        print(f'Insira o município que deseja saber as taxas de aprovação: ')
+        cidade = input()
 
-teste = Search('taxa-aprovacao.xls')
+        data = pesquisa.procurarCidade(cidade)
 
-cidade = input()
-t = teste.procurarCidade(cidade)
-
-print(t)
-print(teste.codigo)
+        print(data)
+        
+        viz = Vizualizacao()
+        viz.plotGraficos(data)
+        
+main = Main()
+main.executarBusca()

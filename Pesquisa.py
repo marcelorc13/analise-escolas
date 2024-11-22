@@ -1,7 +1,7 @@
 from CarregadorDeArquivos import CarregadorDeArquivos
 import pandas as pd
 
-class Search(CarregadorDeArquivos):
+class Pesquisa(CarregadorDeArquivos):
     
     codigo = None
     searchData = None
@@ -27,7 +27,7 @@ class Search(CarregadorDeArquivos):
 
         for index, row in data.iterrows():
             if pd.isna(row['Valor (%)']):
-                data.at[index, 'Valor (%)'] = 'Não consta'
+                data.at[index, 'Valor (%)'] = 0
 
         self.searchData = data
         return self.searchData

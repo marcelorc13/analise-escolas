@@ -25,5 +25,6 @@ class CarregadorDeArquivos:
                 data.at[index, 'Rede'] = rede
                 data.at[index, 'Ano'] = ano
                 
+                
         self.data = data[['Código', 'Município', 'Rede', 'Ano', 'Valor (%)']]
         
